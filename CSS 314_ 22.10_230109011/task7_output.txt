@@ -1,0 +1,29 @@
+Student ID    : 230109011
+Platform      : Windows-11-10.0.26200-SP0
+Logical cores : 16
+Array size    : 30,000,000 float64 elements (240 MB per array)
+Core counts   : [1, 2, 16]
+
+Kernel A (memory-bound): B[i] = A[i]
+ Cores | Wall Time (ms) |  Speedup | Efficiency |   Bandwidth
+-------------------------------------------------------------
+     1 |          15.92 |    1.00x |     100.0% |    30.2 GB/s
+     2 |          11.85 |    1.34x |      67.2% |    40.5 GB/s
+    16 |          12.01 |    1.33x |       8.3% |    40.0 GB/s
+
+Kernel B (compute-bound): B[i] = sin(A[i]) * cos(A[i]) + tan(A[i])
+ Cores | Wall Time (ms) |  Speedup | Efficiency
+-----------------------------------------------
+     1 |         484.95 |    1.00x |     100.0%
+     2 |         242.57 |    2.00x |     100.0%
+    16 |          61.63 |    7.87x |      49.2%
+
+============================================================================
+Efficiency at 16 cores:  Kernel A (copy) = 8.3%   |   Kernel B (sin/cos/tan) = 49.2%
+Extra speedup from 2 to 16 cores:  Kernel A = 0.99x   |   Kernel B = 3.94x   (stall if < 1.25x)
+VERDICT: Kernel A (vector copy) STALLED in scaling due to memory channel saturation:
+         speedup stuck at 1.33x on 16 cores, bandwidth flat at ~40.0 GB/s.
+         Kernel B (sin/cos/tan, compute-bound) kept scaling (7.87x on 16 cores).
+NOTE: efficiency below 100% on the compute-bound kernel is expected when the logical
+      cores include SMT/hyper-threads (two threads share one physical core).
+============================================================================
