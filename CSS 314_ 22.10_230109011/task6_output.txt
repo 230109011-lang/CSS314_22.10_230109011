@@ -1,0 +1,31 @@
+Student ID       : 230109011
+OS               : Windows 11 10.0 (amd64)
+Java             : 25.0.4.1
+Logical cores    : 16
+Threads          : 4
+Increments/thread: 2,000,000
+Runs per variant : 3 (median time reported)
+
+--- Unsynchronized ---
+  run 1: expected 8,000,000 | actual 2,518,320 | lost 5,481,680 (68.5210%) | 67.73 ms
+  run 2: expected 8,000,000 | actual 2,143,768 | lost 5,856,232 (73.2029%) | 66.63 ms
+  run 3: expected 8,000,000 | actual 2,433,966 | lost 5,566,034 (69.5754%) | 63.62 ms
+
+--- AtomicInteger ---
+  run 1: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 96.38 ms
+  run 2: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 89.11 ms
+  run 3: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 90.89 ms
+
+--- ReentrantLock ---
+  run 1: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 47.08 ms
+  run 2: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 43.01 ms
+  run 3: expected 8,000,000 | actual 8,000,000 | lost 0 (0.0000%) | 41.80 ms
+
+Variant          | Wall Time (ms) |    Correct? | Penalty (ms) | Slowdown vs unsync
+---------------------------------------------------------------------------------------
+Unsynchronized   |          66.63 |          NO |         0.00 | 1.00x
+AtomicInteger    |          90.89 |         yes |        24.27 | 1.36x
+ReentrantLock    |          43.01 |         yes |       -23.62 | 0.65x
+
+Synchronization penalty, AtomicInteger: +24.27 ms (1.36x the unsynchronized time)
+Synchronization penalty, ReentrantLock: -23.62 ms (0.65x the unsynchronized time)
