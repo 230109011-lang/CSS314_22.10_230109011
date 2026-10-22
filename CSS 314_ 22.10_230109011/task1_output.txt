@@ -1,0 +1,11 @@
+Student ID      : 230109011
+Seed            : 230109011
+OS              : Windows 11 (10.0.26200)
+Platform        : Windows-11-10.0.26200-SP0
+CPU model       : AMD64 Family 25 Model 68 Stepping 1, AuthenticAMD
+Logical cores   : 16
+Python / NumPy  : 3.13.7 / 2.3.3
+Array size      : 20,000,000 float64 elements
+Sum             : 9998405.082711
+Std deviation   : 0.2886503514
+Serial time     : 106.722 ms
