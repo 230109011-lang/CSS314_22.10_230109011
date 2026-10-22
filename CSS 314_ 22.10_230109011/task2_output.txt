@@ -1,0 +1,17 @@
+Student ID    : 230109011 (seed 230109011)
+Platform      : Windows-11-10.0.26200-SP0
+Logical cores : 16
+Array size    : 20,000,000 float64 elements
+Amdahl P      : 0.95  |  runs per row: 7 (median)
+
+ Cores | Wall Time (ms) |  Speedup | Amdahl Upper Bound
+-------------------------------------------------------
+     1 |         12.477 |    1.00x |              1.00x
+     2 |          6.869 |    1.82x |              1.90x
+     4 |          4.441 |    2.81x |              3.48x
+    16 |          4.557 |    2.74x |              9.14x
+    32 |          4.581 |    2.72x |             12.55x
+
+Serial reference sum : 9998405.082711
+Max relative diff    : 1.86e-16 (parallel vs serial sum)
+Amdahl limit (p->inf): 20.00x
