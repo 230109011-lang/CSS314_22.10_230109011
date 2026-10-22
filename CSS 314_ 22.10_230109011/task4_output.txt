@@ -1,0 +1,18 @@
+Student ID    : 230109011
+Platform      : Windows-11-10.0.26200-SP0
+Logical cores : 16
+Items         : 1000 (cost = 0.0001 * (i % 20) s)
+Workers       : 4
+Runs/strategy : 3 (run with median total time shown)
+Total work    : 950.0 ms  ->  ideal with 4 workers: 237.5 ms
+
+Strategy             | Total (ms) | First done |  Last done | Delta (ms) | vs ideal
+-----------------------------------------------------------------------------------
+A: Static blocks     |     330.27 |     315.07 |     330.27 |      15.20 |    1.39x
+B: Dynamic chunk=1   |     329.72 |     327.79 |     329.72 |       1.92 |    1.39x
+B: Dynamic chunk=5   |     330.42 |     323.74 |     330.42 |       6.68 |    1.39x
+
+Per-worker detail (finish time in ms / items processed):
+  A: Static blocks     W0: 319.8 / 250  W1: 325.4 / 250  W2: 315.1 / 250  W3: 330.3 / 250
+  B: Dynamic chunk=1   W0: 329.7 / 240  W1: 327.8 / 264  W2: 327.9 / 249  W3: 327.9 / 247
+  B: Dynamic chunk=5   W0: 330.4 / 255  W1: 328.9 / 260  W2: 323.7 / 245  W3: 323.9 / 240
