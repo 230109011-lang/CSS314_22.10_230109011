@@ -1,0 +1,18 @@
+Student ID       : 230109011
+OS               : Windows 11 10.0 (amd64)
+Java             : 25.0.4.1
+Logical cores    : 16
+Physical cores   : 8
+Threads used     : 8
+Increments/thread: 50 000 000
+Runs per mode    : 3 (median reported)
+
+  Unpadded Shared  runs (ms): 2237,3 3131,0 2243,9
+  Padded (128 B)   runs (ms): 18,5 22,4 18,3
+
+Mode             | Wall Time (ms) | Ratio vs Padded
+---------------------------------------------------
+Unpadded Shared  |       2243,858 |         121,31x
+Padded (128 B)   |         18,497 |           1,00x
+
+Execution ratio, Unpadded / Padded: 121,31x
