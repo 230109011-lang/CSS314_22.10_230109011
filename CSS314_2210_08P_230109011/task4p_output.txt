@@ -1,0 +1,5 @@
+Student ID: 230109011 | float64 arrays | median of 5 runs
+           N |  Size MB |  A: pipe/pickle |  B: shm attach |  B: shm + copy-in | A / B(attach)
+     100,000 |      0.8 |        1.100 ms |       0.169 ms |          0.500 ms |          6.5x
+   1,000,000 |      8.0 |        8.188 ms |       0.678 ms |          3.494 ms |         12.1x
+  10,000,000 |     80.0 |       94.978 ms |       4.024 ms |         31.672 ms |         23.6x
