@@ -1,0 +1,3 @@
+Student ID : 230109011 | N = 2,000,000 | workers = 8 (median of 5)
+Last element: serial = 11000146 | parallel = 11000146
+Serial Time: 5.52 ms | Parallel Time: 4.31 ms | Speedup: 1.28x | Verification: PASS
