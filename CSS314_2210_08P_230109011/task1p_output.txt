@@ -1,0 +1,7 @@
+Student ID          : 230109011
+Logical cores       : 16
+Workers (physical)  : 8
+Matrix              : 8000x8000 float64 (512 MB)
+Mode A (Row-Major)  : 44.76 ms  (sum=32002593.704971)
+Mode B (Col-Major)  : 99.23 ms  (sum=32002593.704971)
+Cache penalty factor: 2.22x  (Mode B / Mode A)
