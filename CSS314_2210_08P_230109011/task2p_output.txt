@@ -1,0 +1,5 @@
+Student ID           : 230109011
+Samples / threads    : 40,000,000 / 4 (batch=100, median of 5)
+Shared PRNG (mutex)  : pi = 3.14185520 | error = 0.00026255 | 3715.07 ms
+Independent PRNGs    : pi = 3.14198920 | error = 0.00039655 | 3231.16 ms
+Speedup (shared / independent): 1.15x
